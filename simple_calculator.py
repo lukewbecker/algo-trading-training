@@ -3,6 +3,7 @@
 import numpy
 import math
 
+
 def welcome():
     print('''Welcome to my calculator, 100% made in Python.''')
 
@@ -44,15 +45,27 @@ def again():
     Do you want to run the calculator again? Please type Y for Yes or N for No.
     ''')
     
-    # If the user types "Y"
-    if calc_again == 'Y':
+    while calc_again == "Y":
         calculate()
+        calc_again = input('''
+        Do you want to run the calculator again? Please type Y for Yes or N for No.
+        ''')
+        if calc_again == 'N':
+            break
+        else:
+            calculate()
+
+    # If the user types "Y"
+    # if calc_again == 'Y':
+    #     calculate()
+    #     continue
         
-    elif calc_again == 'N':
-        print("Thanks for using my calculator!")
+    # elif calc_again == 'N':
+    #     print("Thanks for using my calculator!")
     
-    else:
-        again()
+    # else:
+    #     again()
+    print("Thanks for using my calculator!")
 
 welcome()
 calculate()
