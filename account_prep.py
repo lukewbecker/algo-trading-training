@@ -104,5 +104,6 @@ print(holdings)
 holdings.to_csv("account_holdings_index.csv")
 holdings.to_csv("account_holdings_no_index.csv", index = False)
 
-
+holdings.to_excel("account_holdings_index.xlsx")
+holdings.to_excel("account_holdings_no_index.xlsx", index = False)
 
