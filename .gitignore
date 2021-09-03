@@ -4,10 +4,6 @@
 .ipynb_checkpoints/
 __pycache__/
 *.csv
+*.xlsx
 env.py
-
 client_secret.json
-
-
-account_balance.xlsx
-data.xlsx
