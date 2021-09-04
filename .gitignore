@@ -8,3 +8,4 @@ __pycache__/
 env.py
 client_secret.json
 *.db
+*.json
