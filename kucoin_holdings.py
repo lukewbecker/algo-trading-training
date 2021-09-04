@@ -148,4 +148,17 @@ with open('data.csv', 'r') as file_obj:
 print("Google sheet updated with newest data.")
 
 # Updating the local SQLite database.
+import sqlite3 as sql
 
+# This line must be run first to setup the connection.
+conn = sql.connect('/Users/luke/projects/github/algo-trading-experiments/kucoin.db')
+
+# This code checks to see if the SQLite database has a table named "holdings".
+
+if sqlite_test.name.count() > 0:
+    holdings_append.to_sql('holdings', con = conn, if_exists = 'append')
+else:
+    # This line creates a table called "holdings" if the table doesn't exist.
+    holdings_append.to_sql('holdings', con = conn)
+    
+print("SQLite database has been updated.")
