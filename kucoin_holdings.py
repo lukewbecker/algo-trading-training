@@ -1,5 +1,7 @@
 # Run this file to update the kucoin holdings sheet in google sheets.
 
+import time
+
 def kucoin_append():
     
     # First importing the needed libraries:
@@ -149,6 +151,7 @@ print("Google sheet updated with newest data.")
 
 # Updating the local SQLite database.
 import sqlite3 as sql
+import pandas as pd
 
 # This line must be run first to setup the connection.
 conn = sql.connect('/Users/luke/projects/github/algo-trading-experiments/kucoin.db')
@@ -163,4 +166,16 @@ else:
     # This line creates a table called "holdings" if the table doesn't exist.
     holdings_append.to_sql('holdings', con = conn)
     
-print("SQLite database has been updated.")
+import time
+
+t = int(5)
+
+def countdown(t):
+    print(f"Script will exit in {t} seconds")
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end = "\r")
+        time.sleep(1)
+        t -= 1
+    print("Limitless Holdings database and Google Sheets have been updated. Thank you.")
