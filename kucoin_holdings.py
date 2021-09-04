@@ -146,3 +146,6 @@ with open('data.csv', 'r') as file_obj:
     client.import_csv(spreadsheet.id, data=content)
     
 print("Google sheet updated with newest data.")
+
+# Updating the local SQLite database.
+
