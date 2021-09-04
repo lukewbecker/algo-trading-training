@@ -154,8 +154,10 @@ import sqlite3 as sql
 conn = sql.connect('/Users/luke/projects/github/algo-trading-experiments/kucoin.db')
 
 # This code checks to see if the SQLite database has a table named "holdings".
+holdings_test = pd.read_sql("SELECT * FROM sqlite_master WHERE type = 'table' AND name = 'holdings';", conn)
 
-if sqlite_test.name.count() > 0:
+# Now the code checks if the table exists, and if so appends the newest holdings dataframe to the sqlite database.
+if holdings_test.name.count() > 0:
     holdings_append.to_sql('holdings', con = conn, if_exists = 'append')
 else:
     # This line creates a table called "holdings" if the table doesn't exist.
