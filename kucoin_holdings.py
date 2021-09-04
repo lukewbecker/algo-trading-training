@@ -178,4 +178,6 @@ def countdown(t):
         print(timer, end = "\r")
         time.sleep(1)
         t -= 1
-    print("Limitless Holdings database and Google Sheets have been updated. Thank you.")
+    print("Limitless Holdings database and Google Sheets have been updated. Have a nice day!")
+    
+countdown(t)
