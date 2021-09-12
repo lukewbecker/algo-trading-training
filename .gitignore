@@ -7,6 +7,5 @@ __pycache__/
 *.xlsx
 env.py
 client_secret.json
-*.db
 *.json
 kucoin.db
