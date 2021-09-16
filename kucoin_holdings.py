@@ -109,6 +109,13 @@ def kucoin_append():
     holdings_append.insert(0, 'date', pd.to_datetime('now').replace(microsecond=0))
     holdings_append.date = pd.to_datetime(holdings_append.date)
     holdings_append = holdings_append.set_index('date').sort_index()
+    
+    # Calcuating the total portfolio value in $:
+    total_port = holdings_append.dollar_value.sum(axis = 0, skipna = True)
+    
+    # adding each holding's percentage of the overall portfolio:
+    holdings_append['percentages'] = round(holdings_append.dollar_value / total_port, 2)
+    
 
     # printing out result, and saving to csv and Excel.
     return holdings_append
@@ -165,7 +172,8 @@ if holdings_test.name.count() > 0:
 else:
     # This line creates a table called "holdings" if the table doesn't exist.
     holdings_append.to_sql('holdings', con = conn)
-    
+
+# Ending script    
 import time
 
 t = int(5)
