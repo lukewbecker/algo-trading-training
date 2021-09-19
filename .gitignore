@@ -9,3 +9,4 @@ env.py
 client_secret.json
 *.json
 kucoin.db
+kraken.key
