@@ -131,9 +131,10 @@ def kucoin_append():
     
 holdings_append = kucoin_append()   
 
-print("CSV written successfully.")
+
 # THIS CODE works to append to the csv file itself. Only works if there is an existing file. I will add the if statement later that'll check if a file exists and create a new one, or use the append function:
 holdings_append.to_csv('data.csv', mode = 'a', header = False)
+print("CSV written successfully.")
 
 print("File appended")
 
