@@ -174,6 +174,8 @@ else:
     # This line creates a table called "holdings" if the table doesn't exist.
     holdings_append.to_sql('holdings', con = conn)
 
+print("Local database updated.")
+
 # Ending script    
 import time
 
