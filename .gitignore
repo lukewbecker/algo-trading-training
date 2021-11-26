@@ -9,5 +9,6 @@ env.py
 client_secret.json
 *.json
 kucoin.db
+whattomine.db
 kraken.key
 *env.py
